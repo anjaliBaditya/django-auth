@@ -1,0 +1,30 @@
+### Signup a New User
+POST http://127.0.0.1:8000/api/signup/
+Content-Type: application/json
+
+{
+  "username": "testuser004",
+  "password": "testpassword",
+  "email": "testuser004@example.com"
+}
+
+### Login with the New User
+POST http://127.0.0.1:8000/api/login/
+Content-Type: application/json
+
+{
+  "username": "testuser004",
+  "password": "testpassword"
+}
+
+### Test Token (Replace <access_token> with the token received from the login response)
+GET http://127.0.0.1:8000/api/test-token/
+Authorization: Bearer <access_token>
+
+
+### Index API (Replace <access_token> with the token received from the login response)
+GET http://127.0.0.1:8000/api/index/
+Authorization: Bearer <access_token>
+
+### Index API Unauthorized Access (Without Token)
+GET http://127.0.0.1:8000/api/index/
